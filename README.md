@@ -1,1 +1,87 @@
-# maiwennn
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question très importante 💖</title>
+<style>
+body{
+background:#ffeef5;
+font-family: Arial, sans-serif;
+text-align:center;
+padding-top:60px;
+overflow:hidden;
+}
+.cat{
+font-size:72px;
+line-height:1;
+margin-bottom:8px;
+}
+.notice{
+font-size:18px;
+color:#333;
+margin-bottom:22px;
+}
+h1{ color:#ff4d88; font-size:32px; margin: 10px 0; }
+p{ font-size:22px; margin: 10px 0 20px; }
+button{
+font-size:20px;
+padding:12px 28px;
+margin:14px;
+border:none;
+border-radius:14px;
+cursor:pointer;
+transition:0.2s;
+}
+#yes{ background:#ff4d88; color:white; }
+#yes:hover{ transform:scale(1.08); }
+#no{ background:#ddd; position:absolute; }
+</style>
+</head>
+<body>
+
+<div class="cat">🐈‍⬛</div>
+<div class="notice">minouche te regarde donc répond bien 😾</div>
+
+<h1>Maiwenn 💕</h1>
+<p>est-ce que tu aimes Isahak ? 😌</p>
+
+<button id="yes">Oui 💖</button>
+<button id="no">Non 🙄</button>
+
+<script>
+const noBtn = document.getElementById("no");
+
+function moveNoButton(){
+const padding = 20;
+const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+
+const x = Math.max(padding, Math.random() * maxX);
+const y = Math.max(padding, Math.random() * maxY);
+
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
+}
+
+window.addEventListener("load", () => {
+noBtn.style.left = "55%";
+noBtn.style.top = "60%";
+});
+
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", (e) => { e.preventDefault(); moveNoButton(); }, {passive:false});
+
+document.getElementById("yes").onclick = () => {
+document.body.innerHTML = `
+<div style="padding-top:80px;">
+<div style="font-size:72px;">🐈‍⬛💖</div>
+<h1 style="color:#ff4d88;">JE LE SAVAIS 😌💖</h1>
+<p style="font-size:24px;">je t’aime très fort aussi 🧸❤️</p>
+</div>
+`;
+};
+</script>
+
+</body>
+</html>
